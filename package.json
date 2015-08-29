@@ -1,0 +1,35 @@
+{
+  "name": "blackout",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 3003",
+    "build": "browserify src/app.js -t babelify --outfile dist/blackout.js",
+    "watch": "watchify   src/app.js -t babelify --outfile dist/blackout.js",
+    "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jevakallio/blackout.git"
+  },
+  "author": "Jani Eväkallio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jevakallio/blackout/issues"
+  },
+  "homepage": "https://github.com/jevakallio/blackout",
+  "dependencies": {
+    "@cycle/core": "^3.1.0",
+    "@cycle/dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "babelify": "^6.2.0",
+    "browserify": "^11.0.1",
+    "eslint": "^0.22.1",
+    "nodemon": "^1.3.7",
+    "watchify": "^3.3.1"
+  }
+}
