@@ -8,6 +8,25 @@
   height: 100vh;
 }
 
+/** WORLD FILTERS **/
+
+.colorful-contrast {
+  -webkit-filter:
+    grayscale(24.7%)
+    sepia(16.7%)
+    brightness(0.75)
+    contrast(241%)
+    saturate(138.4%)
+    hue-rotate(0deg);
+  filter:
+    grayscale(24.7%)
+    sepia(16.7%)
+    brightness(0.75)
+    contrast(241%)
+    saturate(138.4%)
+    hue-rotate(0deg);
+}
+
 .sepia {
     -webkit-filter:
         sepia(80%)
