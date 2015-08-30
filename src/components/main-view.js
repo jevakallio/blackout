@@ -33,16 +33,7 @@ const MainView = React.createClass({
   render() {
     return (
       <div className='row'>
-        <div className='one-half column'>
-          <MapView
-            latitude={this.props.latitude}
-            longitude={this.props.longitude}
-            minZoom={this.props.mapMinZoom}
-            zoom ={this.props.mapZoom}
-            onZoomChanged={this.props.updateMapZoom}
-          />
-        </div>
-        <div className='one-half column'>
+        <div className='two-thirds column'>
           <StreetView
             latitude={this.props.latitude}
             longitude={this.props.longitude}
@@ -52,6 +43,15 @@ const MainView = React.createClass({
             onPositionChanged={this.props.updatePosition}
             onPovChanged={this.props.updatePov}
             />
+        </div>
+        <div className='one-third column'>
+          <MapView
+            latitude={this.props.latitude}
+            longitude={this.props.longitude}
+            minZoom={this.props.mapMinZoom}
+            zoom ={this.props.mapZoom}
+            onZoomChanged={this.props.updateMapZoom}
+          />
         </div>
       </div>
     );
