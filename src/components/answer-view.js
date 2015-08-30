@@ -41,6 +41,7 @@ const AnswerView = React.createClass({
 
 const styles = {
   answerInput: {
+    color: '#222',
     width: '95%',
     marginRight: '5%'
   }
