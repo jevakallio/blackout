@@ -5,14 +5,14 @@ body {
   overflow: hidden;
 }
 
-.street-view-container {
+.street-view-host {
   width: 100%;
   height: 100vh;
 }
 
-.map-container {
+.map-host {
   width: 100%;
-  height: 0vh;
+  height: 100vh;
 }
 
 /** LANDING PAGE */
