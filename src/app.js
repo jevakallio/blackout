@@ -1,17 +1,17 @@
-import Cycle from '@cycle/core';
-import DOM from '@cycle/dom';
+'use strict';
 
-function main() {
-  return {
-    DOM: Cycle.Rx.Observable.interval(1000)
-      .map(i => DOM.h(
-        'h1', '' + i + ' seconds elapsed'
-      ))
-  };
-}
+const React = require('react');
+const {Provider, connect} = require('react-redux');
 
-let drivers = {
-  DOM: DOM.makeDOMDriver('#blackout-app')
-};
+const MainView = require('./components/main-view');
+const store = require('./redux/store');
 
-Cycle.run(main, drivers);
+// pass store state and action creators to main view
+const actions = require('./redux/actions');
+const props = state => state.toJS();
+const ReduxConnectedMainView = connect(props, actions)(MainView);
+
+// bind main view to store instance
+const renderer = () => <ReduxConnectedMainView />;
+const target = document.getElementById('blackout-app');
+React.render(<Provider store={store}>{renderer}</Provider>, target);
