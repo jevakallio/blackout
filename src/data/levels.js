@@ -6,7 +6,7 @@ module.exports = {
     levelDescription: 'What the hell happened?',
     levelAnswer: 'gherkin',
     levelAnswerIsExact: false,
-    nextLevel: 'foo',
+    nextLevel: 'last',
     mapMinZoom: 12,
     mapZoom: 12,
     latitude: 51.5145087,
