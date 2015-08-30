@@ -4,7 +4,7 @@ const React = require('react');
 const google = require('../util/google');
 const mapLinker = require('../util/map-linker');
 
-const {func, number} = React.PropTypes;
+const {func, number, string} = React.PropTypes;
 
 const StreetView = React.createClass({
   displayName: 'StreetView',
@@ -14,7 +14,7 @@ const StreetView = React.createClass({
     longitude: number.isRequired,
     heading: number.isRequired,
     pitch: number.isRequired,
-
+    panoramaClassName: string.isRequired,
     // dispatcher callbacks
     onPositionChanged: func.isRequired,
     onPovChanged: func.isRequired
@@ -82,7 +82,7 @@ const StreetView = React.createClass({
 
   render() {
     return (
-      <div className='street-view-host gritty' ref='streetViewHost'>
+      <div className={'street-view-host ' + this.props.panoramaClassName} ref='streetViewHost'>
         Street view
       </div>
     );

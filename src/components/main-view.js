@@ -21,6 +21,7 @@ const MainView = React.createClass({
     pitch: number.isRequired,
     mapZoom: number.isRequired,
     mapMinZoom: number.isRequired,
+    worldStyle: string.isRequired,
 
     //actions
     updatePosition: func.isRequired,
@@ -47,6 +48,7 @@ const MainView = React.createClass({
             longitude={this.props.longitude}
             heading={this.props.heading}
             pitch={this.props.pitch}
+            panoramaClassName={this.props.worldStyle}
             onPositionChanged={this.props.updatePosition}
             onPovChanged={this.props.updatePov}
             />

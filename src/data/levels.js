@@ -9,6 +9,7 @@ module.exports = {
     nextLevel: 'last',
     mapMinZoom: 12,
     mapZoom: 12,
+    worldStyle: 'colorful-contrast',
     latitude: 51.5145087,
     longitude: -0.080327,
     heading: 17.92,
