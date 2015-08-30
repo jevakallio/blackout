@@ -15,6 +15,7 @@ const MainView = React.createClass({
     // state
     levelTitle: string.isRequired,
     levelDescription: string.isRequired,
+    levelQuestion: string.isRequired,
     levelAnswer: string.isRequired,
     levelAnswerIsExact: bool.isRequired,
     nextLevel: string,
@@ -53,6 +54,7 @@ const MainView = React.createClass({
             levelDescription={this.props.levelDescription}
             />
           <AnswerView
+            levelQuestion={this.props.levelQuestion}
             levelAnswer={this.props.levelAnswer}
             levelAnswerIsExact={this.props.levelAnswerIsExact}
             />

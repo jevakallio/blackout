@@ -4,6 +4,7 @@ module.exports = {
   start: {
     levelTitle: 'Where am I?',
     levelDescription: 'What the hell happened?',
+    levelQuestion: 'Where am I?',
     levelAnswer: 'gherkin',
     levelAnswerIsExact: false,
     nextLevel: 'last',
@@ -18,6 +19,7 @@ module.exports = {
   last: {
     levelTitle: 'Final question',
     levelDescription: 'Live, universe etc.',
+    levelQuestion: 'What is it?',
     levelAnswer: '42',
     levelAnswerIsExact: true,
     nextLevel: null

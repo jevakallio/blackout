@@ -15,9 +15,18 @@ const ClueView = React.createClass({
   },
   render() {
     return (
-      <div className='clue-container'>{this.props.levelTitle}</div>
+      <div className='clue-container'>
+        <p style={styles.description}>{this.props.levelDescription}</p>
+      </div>
     );
   }
 });
+
+const styles = {
+  description: {
+    padding: '40px 40px 0 0',
+    textAlign: 'justify'
+  }
+};
 
 module.exports = ClueView;
