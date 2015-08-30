@@ -35,11 +35,11 @@ module.exports = {
   },
 
   correctAnswerGiven(levelId, answer) {
-    let nextLevelId = levels[levelId].next;
+    let nextLevelId = levels[levelId].nextLevel;
     if (nextLevelId) {
       return {
         type: 'CORRECT_ANSWER',
-        nextLevel: levels[levelId],
+        nextLevel: levels[nextLevelId],
         previousAnswer: answer
       };
     }
