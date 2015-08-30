@@ -11,6 +11,10 @@ const actions = require('./redux/actions');
 const props = state => state.toJS();
 const ReduxConnectedMainView = connect(props, actions)(MainView);
 
+document.querySelector('.landing-page .start-game').addEventListener('click', () => {
+  document.querySelector('.landing-page').style.display = 'none';
+});
+
 // bind main view to store instance
 const renderer = () => <ReduxConnectedMainView />;
 const target = document.getElementById('blackout-app');
