@@ -3,6 +3,9 @@
 const React = require('react');
 const StreetView = require('./street-view');
 const MapView = require('./map-view');
+const ClueView = require('./clue-view');
+const AnswerView = require('./answer-view');
+
 const {number, func, string, bool} = React.PropTypes;
 
 const MainView = React.createClass({
@@ -45,13 +48,21 @@ const MainView = React.createClass({
             />
         </div>
         <div className='one-third column'>
+          <ClueView
+            levelTitle={this.props.levelTitle}
+            levelDescription={this.props.levelDescription}
+            />
+          <AnswerView
+            levelAnswer={this.props.levelAnswer}
+            levelAnswerIsExact={this.props.levelAnswerIsExact}
+            />
           <MapView
             latitude={this.props.latitude}
             longitude={this.props.longitude}
             minZoom={this.props.mapMinZoom}
             zoom ={this.props.mapZoom}
             onZoomChanged={this.props.updateMapZoom}
-          />
+            />
         </div>
       </div>
     );
