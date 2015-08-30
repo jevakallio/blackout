@@ -1,0 +1,66 @@
+.street-view-host {
+  width: 100%;
+  height: 100vh;
+}
+
+.map-host {
+  width: 100%;
+  height: 100vh;
+}
+
+.sepia {
+    -webkit-filter:
+        sepia(80%)
+        brightness(1)
+        contrast(100%)
+        saturate(140%)
+        hue-rotate(0deg);
+    filter:
+        sepia(80%)
+        brightness(1)
+        contrast(100%)
+        saturate(140%)
+        hue-rotate(0deg);
+}
+
+.gritty {
+    -webkit-filter:
+        grayscale(100%)
+        sepia(3%)
+        brightness(0.75)
+        contrast(219%)
+        saturate(100%)
+        hue-rotate(0deg);
+    filter:
+        grayscale(100%)
+        sepia(3%)
+        brightness(0.75)
+        contrast(219%)
+        saturate(100%)
+        hue-rotate(0deg);
+}
+
+.less-gritty {
+    -webkit-filter:
+        grayscale(100%)
+        sepia(3%)
+        brightness(0.85)
+        contrast(180%)
+        saturate(100%)
+        hue-rotate(0deg);
+    filter:
+        grayscale(100%)
+        sepia(3%)
+        brightness(0.85)
+        contrast(180%)
+        saturate(100%)
+        hue-rotate(0deg);
+}
+
+.colorful {
+    -webkit-filter:
+        brightness(1)
+        contrast(220%)
+        saturate(220%)
+        hue-rotate(0deg);
+}
