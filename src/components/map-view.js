@@ -54,7 +54,7 @@ const MapView = React.createClass({
 
   render() {
     return (
-      <div className='map-host' ref='mapHost'>
+      <div className='map-container' ref='mapHost'>
         Map host
       </div>
     );

@@ -2,8 +2,10 @@
 
 module.exports = {
   start: {
+    levelId: 'start',
     levelTitle: 'Where am I?',
-    levelDescription: 'What the hell happened?',
+    levelDescription: 'I find myself in a bit of a pickle. I just woke up, I have a throbbing headache, and my clothes are ruffled. I have no idea where I am. Moreover, I don’t seem to remember anything much from the last… what time is it? Where’s my watch? No watch. Where’s my phone? Goddamnit. What happened? I remember ordering one dry martini, and that’s where it all goes black. Where the hell am I anyway?',
+    levelQuestion: 'Where am I?',
     levelAnswer: 'gherkin',
     levelAnswerIsExact: false,
     nextLevel: 'last',
@@ -16,8 +18,10 @@ module.exports = {
     pitch: 0
   },
   last: {
+    levelId: 'last',
     levelTitle: 'Final question',
     levelDescription: 'Live, universe etc.',
+    levelQuestion: 'What is it?',
     levelAnswer: '42',
     levelAnswerIsExact: true,
     nextLevel: null

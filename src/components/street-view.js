@@ -82,7 +82,7 @@ const StreetView = React.createClass({
 
   render() {
     return (
-      <div className={'street-view-host ' + this.props.panoramaClassName} ref='streetViewHost'>
+      <div className={'street-view-container ' + this.props.panoramaClassName} ref='streetViewHost'>
         Street view
       </div>
     );

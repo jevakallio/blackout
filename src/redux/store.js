@@ -16,6 +16,16 @@ const next = function(state = defaultState, action) {
       return state.merge(action.level);
     case 'UPDATE_MAP_ZOOM':
       return state.set('mapZoom', action.mapZoom);
+    case 'CORRECT_ANSWER':
+      return state
+        .merge(action.nextLevel)
+        .set('previousAnswer', action.answer)
+        .set('previousAnswerWasCorrect', true);
+    case 'WRONG_ANSWER':
+      return state
+        .merge(action.nextLevel)
+        .set('previousAnswer', action.answer)
+        .set('previousAnswerWasCorrect', false);
     default:
       return state;
   }
