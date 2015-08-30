@@ -13,6 +13,7 @@ const MainView = React.createClass({
   propTypes: {
 
     // state
+    levelId: string.isRequired,
     levelTitle: string.isRequired,
     levelDescription: string.isRequired,
     levelQuestion: string.isRequired,
@@ -27,12 +28,16 @@ const MainView = React.createClass({
     mapMinZoom: number.isRequired,
     worldStyle: string.isRequired,
 
+    previousAnswer: string,
+    previousAnswerWasCorrect: bool,
+
     //actions
     updatePosition: func.isRequired,
     updatePov: func.isRequired,
     updateMapZoom: func.isRequired,
-
-    setLevel: func.isRequired
+    setLevel: func.isRequired,
+    correctAnswerGiven: func.isRequired,
+    wrongAnswerGiven: func.isRequired
   },
   render() {
     return (
@@ -54,9 +59,12 @@ const MainView = React.createClass({
             levelDescription={this.props.levelDescription}
             />
           <AnswerView
+            levelId={this.props.levelId}
             levelQuestion={this.props.levelQuestion}
             levelAnswer={this.props.levelAnswer}
             levelAnswerIsExact={this.props.levelAnswerIsExact}
+            onCorrectAnswer={answer => this.props.correctAnswerGiven(this.props.levelId, answer)}
+            onWrongAnswer={answer => this.props.wrongAnswerGiven(this.props.levelId, answer)}
             />
           <MapView
             latitude={this.props.latitude}

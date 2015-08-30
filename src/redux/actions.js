@@ -32,5 +32,28 @@ module.exports = {
       type: 'SET_LEVEL',
       level: levels[levelId]
     };
+  },
+
+  correctAnswerGiven(levelId, answer) {
+    let nextLevelId = levels[levelId].next;
+    if (nextLevelId) {
+      return {
+        type: 'CORRECT_ANSWER',
+        nextLevel: levels[levelId],
+        previousAnswer: answer
+      };
+    }
+    return {
+      type: 'FINISHED'
+    };
+
+  },
+
+  wrongAnswerGiven(levelId, answer) {
+    return {
+      type: 'WRONG_ANSWER',
+      previousAnswer: answer
+    };
   }
+
 };
