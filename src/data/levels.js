@@ -27,6 +27,7 @@ module.exports = {
     levelQuestion: 'Answer is foobar',
     levelAnswer: 'foobar',
     levelAnswerIsExact: true,
+    worldStyle: 'bright-day',
     latitude: 51.5145193,
     longitude: -0.0809905,
     heading: 91.29,

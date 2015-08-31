@@ -141,10 +141,15 @@ body {
         hue-rotate(0deg);
 }
 
-.colorful {
+.bright-day {
     -webkit-filter:
-        brightness(1)
-        contrast(220%)
-        saturate(220%)
+        brightness(1.05)
+        contrast(120%)
+        saturate(150%)
+        hue-rotate(0deg);
+    filter:
+        brightness(1.05)
+        contrast(120%)
+        saturate(150%)
         hue-rotate(0deg);
 }
