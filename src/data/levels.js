@@ -32,7 +32,7 @@ module.exports = {
     heading: 91.29,
     pitch: 41.54,
     acquiredInventory: [
-      { type: 'image', name: 'Coat check tag', image: 'assets/inventory/coatcheck.jpg' }
+      { type: 'image', name: 'Coat check tag', image: 'assets/inventory/coat-check-ticket.png' }
     ],
     nextLevel: 'last'
   },
