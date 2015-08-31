@@ -3,8 +3,6 @@
 const Redux = require('redux');
 const gameState = require('../util/game-state');
 
-const defaultState = gameState.load() || gameState.getInitialState();
-
 function mutate(state, action) {
   switch(action.type) {
     case 'UPDATE_POSITION':
@@ -36,7 +34,12 @@ function mutate(state, action) {
   }
 }
 
-function next(state = defaultState, action) {
+function next(state, action) {
+
+  if(action.type === '@@redux/INIT') {
+    return gameState.load() || gameState.getInitialState();
+  }
+
   let nextState = mutate(state, action);
   gameState.save(nextState);
   return nextState;

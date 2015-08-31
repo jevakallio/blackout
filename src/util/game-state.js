@@ -6,6 +6,7 @@ const levels = require('../data/levels');
 module.exports = {
   save,
   load,
+  hasSavedState,
   getInitialState
 };
 
@@ -29,6 +30,10 @@ function load() {
   }
 
   return null;
+}
+
+function hasSavedState() {
+  return load() !== null;
 }
 
 function getInitialState() {
