@@ -26,6 +26,7 @@ const InventoryThumbnail = React.createClass({
 
 const styles = {
   thumbnail: {
+    cursor: 'pointer',
     height: '100px',
     padding: '20px'
   }
