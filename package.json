@@ -7,7 +7,8 @@
     "start": "http-server -p 3003",
     "build": "browserify src/app.js -t babelify --outfile dist/blackout.js",
     "watch": "watchify   src/app.js -t babelify --outfile dist/blackout.js",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "poormansdeploy": "npm run build && cp -r index.html dist styles assets ../jevakallio.github.io/blackout"
   },
   "repository": {
     "type": "git",
