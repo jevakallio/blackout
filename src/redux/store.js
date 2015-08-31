@@ -29,6 +29,10 @@ function mutate(state, action) {
       return state.set('focusedInventoryItem', action.item);
     case 'HIDE_INVENTORY_ITEM':
       return state.set('focusedInventoryItem', null);
+    case 'FINISHED':
+      // hack, @TODO move page into the react scope
+      document.querySelector('.stay-tuned-page').style.display = 'block';
+      return state;
     default:
       return state;
   }
