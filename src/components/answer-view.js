@@ -21,25 +21,39 @@ const AnswerView = React.createClass({
 
   getInitialState() {
     return {
-      showError: false
+      showError: false,
+      showSuccess: false,
+      value: ''
     };
+  },
+
+  componentWillReceiveProps(next) {
+    if(next.levelId !== this.props.levelId) {
+      this.setState({
+        value: ''
+      });
+    }
   },
 
   onKeyUp() {
     this.setState({
-      showError: false
+      showError: false,
+      showSuccess: false
     });
   },
 
   onKeyPress(e) {
     if(e.which === KEY_ENTER) {
-      if(!this.checkAnswer(e.target.value)) {
-        this.setState({
-          showError: true
-        });
-      }
+      this.checkAnswer(e.target.value);
     }
   },
+
+  onChange(e) {
+    this.setState({
+      value: e.target.value
+    });
+  },
+
 
   checkAnswer(answer) {
     let attempt = answer.trim().toLowerCase();
@@ -51,11 +65,15 @@ const AnswerView = React.createClass({
 
     if (correct) {
       this.props.onCorrectAnswer(attempt);
+      this.setState({
+        showSuccess: true
+      });
     } else {
       this.props.onWrongAnswer(attempt);
+      this.setState({
+        showError: true
+      });
     }
-
-    return correct;
   },
 
   render() {
@@ -68,6 +86,13 @@ const AnswerView = React.createClass({
       });
     }
 
+    if(this.state.showSuccess) {
+      inputStyle = _.extend({}, inputStyle, {
+        color: 'white',
+        backgroundColor: '#04AB00'
+      });
+    }
+
     return (
       <div className='answer-container'>
         <label htmlFor='answer'>
@@ -76,8 +101,10 @@ const AnswerView = React.createClass({
         <input
           name='answer'
           type='text'
+          value={this.state.value}
           onKeyUp={this.onKeyUp}
           onKeyPress={this.onKeyPress}
+          onChange={this.onChange}
           style={inputStyle}>
         </input>
       </div>
