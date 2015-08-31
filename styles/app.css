@@ -6,12 +6,17 @@ body {
 
 .answer-container {
   width: 100%;
-  height: 10vh;
+  height: 30vh;
 }
 
 .clue-container {
   width: 100%;
   height: 40vh;
+}
+
+.inventory-container {
+  width: 100%;
+  height: 30vh;
 }
 
 .map-container {
@@ -54,13 +59,18 @@ body {
   position: relative;
   top: 40px;
   font-size: 16px;
+
+}
+
+.red-button {
   background-color: hsl(347, 91%, 29%);
   color: white;
   border-width: 0px;
 }
 
-.landing-page .start-game:hover {
+.red-button:hover {
   background-color: hsl(347, 93%, 41%);
+  color: white;
 }
 
 /** WORLD FILTERS **/
