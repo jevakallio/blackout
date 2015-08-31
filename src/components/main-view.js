@@ -36,7 +36,7 @@ const MainView = React.createClass({
     previousAnswer: string,
     previousAnswerWasCorrect: bool,
     focusedInventoryItem: object,
-    
+
     //actions
     updatePosition: func.isRequired,
     updatePov: func.isRequired,
@@ -81,23 +81,34 @@ const MainView = React.createClass({
               inventory={this.props.inventory}
               onItemClicked={this.props.viewInventoryItem}
               />
-            <MapView
-              latitude={this.props.latitude}
-              longitude={this.props.longitude}
-              minZoom={this.props.mapMinZoom}
-              zoom ={this.props.mapZoom}
-              onZoomChanged={this.props.updateMapZoom}
-              />
+
           </div>
         }
         { this.props.focusedInventoryItem &&
           <div className='one-third column'>
-            <InventoryDetail
-              name={this.props.focusedInventoryItem.name}
-              type={this.props.focusedInventoryItem.type}
-              image={this.props.focusedInventoryItem.image}
-              close={this.props.hideInventoryItem}
-              />
+            { this.props.focusedInventoryItem.type === 'map'
+              ? <MapView
+                  latitude={this.props.latitude}
+                  longitude={this.props.longitude}
+                  minZoom={this.props.mapMinZoom}
+                  zoom ={this.props.mapZoom}
+                  onZoomChanged={this.props.updateMapZoom}
+                  />
+              : <InventoryDetail
+                  name={this.props.focusedInventoryItem.name}
+                  type={this.props.focusedInventoryItem.type}
+                  image={this.props.focusedInventoryItem.image}
+                  close={this.props.hideInventoryItem}
+                  />
+            }
+          <div style={{textAlign: 'center'}}>
+            <button
+              style={styles.closeInventoryButton}
+              className='red-button'
+              onClick={this.props.hideInventoryItem}>
+              Close
+            </button>
+          </div>
           </div>
         }
       </div>
@@ -105,4 +116,10 @@ const MainView = React.createClass({
   }
 });
 
+const styles = {
+  closeInventoryButton: {
+    marginTop: '30px',
+    display: 'inline-block'
+  }
+}
 module.exports = MainView;

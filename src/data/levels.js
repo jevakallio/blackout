@@ -45,7 +45,7 @@ module.exports = {
     levelAnswer: '42',
     levelAnswerIsExact: true,
     acquiredInventory: [
-      { type: 'phone', name: 'Mobile phone', image: 'assets/inventory/phone.jpg' }
+      { type: 'map', name: 'Google Maps', image: 'assets/inventory/phone-map.png' }
     ],
     nextLevel: null
   }
