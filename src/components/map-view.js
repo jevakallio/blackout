@@ -54,11 +54,20 @@ const MapView = React.createClass({
 
   render() {
     return (
-      <div className='map-container' ref='mapHost'>
+      <div style={styles.map} ref='mapHost'>
         Map host
       </div>
     );
   }
 });
+
+const styles = {
+  map: {
+    height: '80vh',
+    width: '90%',
+    marginTop: '10%',
+    marginRight: '10%'
+  }
+};
 
 module.exports = MapView;

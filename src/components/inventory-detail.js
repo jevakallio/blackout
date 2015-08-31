@@ -1,7 +1,7 @@
 'use strict';
 
 const React = require('react');
-const {string, func} = React.PropTypes;
+const {string} = React.PropTypes;
 
 const InventoryDetail = React.createClass({
   displayName: 'InventoryDetail',
@@ -10,10 +10,7 @@ const InventoryDetail = React.createClass({
     // state
     name: string.isRequired,
     type: string.isRequired,
-    image: string.isRequired,
-
-    //actions
-    close: func.isRequired
+    image: string.isRequired
   },
   render() {
     return (
@@ -22,11 +19,6 @@ const InventoryDetail = React.createClass({
           title={this.props.name}
           src={this.props.image}
           style={styles.image} />
-        <div>
-          <button style={styles.button} className='red-button' onClick={this.props.close}>
-            Close
-          </button>
-        </div>
       </div>
     );
   }
@@ -39,10 +31,8 @@ const styles = {
   },
   image: {
     height: '80vh',
-    padding: '5vh'
-  },
-  button: {
-    display: 'inline-block'
+    marginTop: '10%',
+    marginRight: '10%'
   }
 };
 
