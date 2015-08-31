@@ -46,6 +46,7 @@ module.exports = {
     levelAnswerIsExact: false,
     worldStyle: 'bright-day',
     acquiredInventory: [
+      { type: 'map', name: 'Phone map', image: 'assets/inventory/phone-map.png' },
       { type: 'image', name: 'Weird map', image: 'assets/inventory/weird-map.png' }
     ],
     nextLevel: null
