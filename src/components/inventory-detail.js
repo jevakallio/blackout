@@ -22,9 +22,11 @@ const InventoryDetail = React.createClass({
           title={this.props.name}
           src={this.props.image}
           style={styles.image} />
-        <button className='red-button' onClick={this.props.close}>
-          Close
-        </button>
+        <div>
+          <button style={styles.button} className='red-button' onClick={this.props.close}>
+            Close
+          </button>
+        </div>
       </div>
     );
   }
@@ -32,11 +34,15 @@ const InventoryDetail = React.createClass({
 
 const styles = {
   container: {
-    textAlign: 'center'
+    textAlign: 'center',
+    float: 'none'
   },
   image: {
-    width: '75%',
-    padding: '40px'
+    height: '80vh',
+    padding: '5vh'
+  },
+  button: {
+    display: 'inline-block'
   }
 };
 
