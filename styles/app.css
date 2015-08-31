@@ -67,19 +67,19 @@ body {
 
 .colorful-contrast {
   -webkit-filter:
-    grayscale(24.7%)
-    sepia(16.7%)
-    brightness(0.75)
-    contrast(241%)
-    saturate(138.4%)
-    hue-rotate(0deg);
+    grayscale(6.6%)
+    sepia(1.7%)
+    brightness(0.85)
+    contrast(195%)
+    saturate(108.4%)
+    hue-rotate(10deg);
   filter:
-    grayscale(24.7%)
-    sepia(16.7%)
-    brightness(0.75)
-    contrast(241%)
-    saturate(138.4%)
-    hue-rotate(0deg);
+    grayscale(6.6%)
+    sepia(1.7%)
+    brightness(0.85)
+    contrast(195%)
+    saturate(108.4%)
+    hue-rotate(10deg);
 }
 
 .sepia {
