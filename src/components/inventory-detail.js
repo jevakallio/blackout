@@ -30,7 +30,8 @@ const styles = {
     float: 'none'
   },
   image: {
-    height: '80vh',
+    maxWidth: '27vw',
+    maxHeight: '80vh',
     marginTop: '10%',
     marginRight: '10%'
   }
