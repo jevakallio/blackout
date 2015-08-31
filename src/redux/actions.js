@@ -54,6 +54,19 @@ module.exports = {
       type: 'WRONG_ANSWER',
       previousAnswer: answer
     };
+  },
+
+  viewInventoryItem(item) {
+    return {
+      type: 'VIEW_INVENTORY_ITEM',
+      item
+    };
+  },
+
+  hideInventoryItem() {
+    return {
+      type: 'HIDE_INVENTORY_ITEM'
+    };
   }
 
 };
