@@ -35,17 +35,18 @@ module.exports = {
     acquiredInventory: [
       { type: 'image', name: 'Coat check tag', image: 'assets/inventory/coat-check-ticket.png' }
     ],
-    nextLevel: 'last'
+    nextLevel: 'third'
   },
-  last: {
-    levelId: 'last',
-    levelTitle: 'Final question',
-    levelDescription: 'Live, universe etc.',
-    levelQuestion: 'What is it?',
-    levelAnswer: '42',
-    levelAnswerIsExact: true,
+  third: {
+    levelId: 'third',
+    levelTitle: 'Barry the barber',
+    levelDescription: "They seemed surprised to see me, but they gave me back my jacket. I found two things in the pocket: my phone and this piece of paper. Glad to have my phone back, it'll make it a lot easier to jump around town",
+    levelQuestion: "Once in the chair, what's framed on the right?",
+    levelAnswer: 'razor',
+    levelAnswerIsExact: false,
+    worldStyle: 'bright-day',
     acquiredInventory: [
-      { type: 'map', name: 'Google Maps', image: 'assets/inventory/phone-map.png' }
+      { type: 'image', name: 'Weird map', image: 'assets/inventory/weird-map.png' }
     ],
     nextLevel: null
   }
