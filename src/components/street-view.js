@@ -65,17 +65,21 @@ const StreetView = React.createClass({
   },
 
   componentWillReceiveProps(next) {
-    let pov = this._panorama.getPov();
-    let pos = this._panorama.getPosition();
 
-    if (next.heading !== pov.heading || next.pitch !== pov.pitch) {
+    // only sync streetview locations
+    // - if the values changed from previous render cycle (changed in this props)
+    // - if the value is different from the streetview location (actually changed)
+    let pov = this._panorama.getPov();
+    if ((next.heading !== this.props.heading || next.pitch !== this.props.pitch) &&
+        (next.heading !== pov.heading || next.pitch !== pov.pitch)) {
       this._panorama.setPov({
         heading: next.heading,
         pitch: next.pitch
       });
     }
-
-    if (next.latitude !== pos.lat() || next.longitude !== pos.lng()) {
+    let pos = this._panorama.getPosition();
+    if((next.latitude !== this.props.latitude || next.longitude !== this.props.longitude) &&
+       (next.latitude !== pos.lat() || next.longitude !== pos.lng())) {
       this._panorama.setPosition(new google.maps.LatLng(next.latitude, next.longitude));
     }
   },
