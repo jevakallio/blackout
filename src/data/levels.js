@@ -40,7 +40,7 @@ module.exports = {
   third: {
     levelId: 'third',
     levelTitle: 'Barry the barber',
-    levelDescription: "They seemed surprised to see me, but they gave me back my jacket. I found two things in the pocket: my phone and this piece of paper. Glad to have my phone back, it'll make it a lot easier to jump around town",
+    levelDescription: "They seemed surprised to see me, but I got my jacket. There were two things in the pocket: my phone and this piece of paper. Glad to have my phone back, it'll make it a lot easier to jump around town!",
     levelQuestion: "Once in the chair, what's framed on the right?",
     levelAnswer: 'razor',
     levelAnswerIsExact: false,
