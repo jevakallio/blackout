@@ -8,14 +8,33 @@ module.exports = {
     levelQuestion: 'Where am I?',
     levelAnswer: 'gherkin',
     levelAnswerIsExact: false,
-    nextLevel: 'last',
+    nextLevel: 'second',
     mapMinZoom: 12,
     mapZoom: 12,
     worldStyle: 'colorful-contrast',
+    // inventory should be defined only on the first level,
+    // afterwards use acquiredInventory to add items to it
+    inventory: [],
     latitude: 51.5145087,
     longitude: -0.080327,
     heading: 17.92,
     pitch: 0
+  },
+  second: {
+    levelId: 'second',
+    levelTitle: 'Balls bros',
+    levelDescription: 'Ticket stub etc.',
+    levelQuestion: 'Answer is foobar',
+    levelAnswer: 'foobar',
+    levelAnswerIsExact: true,
+    latitude: 51.5145193,
+    longitude: -0.0809905,
+    heading: 91.29,
+    pitch: 41.54,
+    acquiredInventory: [
+      { type: 'image', name: 'Coat check tag', image: 'assets/inventory/coatcheck.jpg' }
+    ],
+    nextLevel: 'last'
   },
   last: {
     levelId: 'last',
@@ -24,6 +43,9 @@ module.exports = {
     levelQuestion: 'What is it?',
     levelAnswer: '42',
     levelAnswerIsExact: true,
+    acquiredInventory: [
+      { type: 'phone', name: 'Mobile phone', image: 'assets/inventory/phone.jpg' }
+    ],
     nextLevel: null
   }
 };

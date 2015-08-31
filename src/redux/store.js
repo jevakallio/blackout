@@ -27,6 +27,10 @@ function mutate(state, action) {
         .merge(action.nextLevel)
         .set('previousAnswer', action.answer)
         .set('previousAnswerWasCorrect', false);
+    case 'VIEW_INVENTORY_ITEM':
+      return state.set('focusedInventoryItem', action.item);
+    case 'HIDE_INVENTORY_ITEM':
+      return state.set('focusedInventoryItem', null);
     default:
       return state;
   }
