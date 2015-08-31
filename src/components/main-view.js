@@ -31,11 +31,12 @@ const MainView = React.createClass({
     mapMinZoom: number.isRequired,
     worldStyle: string.isRequired,
 
+
     // transient state
     previousAnswer: string,
     previousAnswerWasCorrect: bool,
     focusedInventoryItem: object,
-
+    
     //actions
     updatePosition: func.isRequired,
     updatePov: func.isRequired,
