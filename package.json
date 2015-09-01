@@ -24,6 +24,7 @@
     "bluebird": "^2.9.34",
     "immutable": "^3.7.4",
     "lodash": "^3.10.1",
+    "mobile-detect": "^1.2.1",
     "react": "^0.13.3",
     "react-immutable-proptypes": "^1.2.0",
     "react-redux": "^1.0.1",

@@ -78,6 +78,14 @@ body {
   font-size: 140px;
 }
 
+.mobile-sorry .title {
+  font-size: 72px;
+}
+
+.mobile-sorry .explanation {
+  font-size: 20px;
+}
+
 .static-page .tagline {
   font-size: 32px;
 }

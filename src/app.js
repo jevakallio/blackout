@@ -7,6 +7,14 @@ const MainView = require('./components/main-view');
 const store = require('./redux/store');
 const gameState = require('./util/game-state');
 
+const MobileDetect = require('mobile-detect');
+var md = new MobileDetect(window.navigator.userAgent);
+if (md.phone()) {
+  document.querySelector('.landing-page').style.display = 'none';
+  document.querySelector('.mobile-sorry').style.display = 'block';
+
+}
+
 function startGame() {
 
   // pass store state and action creators to main view
