@@ -1,6 +1,6 @@
 'use strict';
 let levels = require('../data/levels');
-
+let analytics = require('../util/analytics');
 module.exports = {
   updatePosition(position) {
     return {
@@ -35,6 +35,11 @@ module.exports = {
   },
 
   correctAnswerGiven(levelId, answer) {
+    analytics.addEvent({
+      event: 'rightAnswer',
+      level: levelId,
+      answer: answer
+    });
     let nextLevelId = levels[levelId].nextLevel;
     if (nextLevelId) {
       return {
@@ -50,6 +55,12 @@ module.exports = {
   },
 
   wrongAnswerGiven(levelId, answer) {
+    analytics.addEvent({
+      event: 'wrongAnswer',
+      level: levelId,
+      answer: answer
+    });
+
     return {
       type: 'WRONG_ANSWER',
       previousAnswer: answer
